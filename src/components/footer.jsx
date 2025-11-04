@@ -1,147 +1,142 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Youtube,
-  Droplet, // For app logo, if you use an icon
-} from "lucide-react";
+import React from 'react';
 
 const Footer = () => {
-  const { t } = useTranslation();
-
-  const currentYear = new Date().getFullYear();
-
-  const footerLinks = [
-    {
-      title: t("company"),
-      links: [
-        { name: t("aboutUs"), path: "/about" },
-        { name: t("careers"), path: "/careers" }, // New key
-        { name: t("blog"), path: "/blog" }, // New key
-        { name: t("security"), path: "/security" },
-      ],
-    },
-    {
-      title: t("products"), // New key
-      links: [
-        { name: t("spotTrading"), path: "/trade/spot" },
-        { name: t("futuresTrading"), path: "/futures/trading" },
-        { name: t("earn"), path: "/earn" },
-        { name: t("buyCrypto"), path: "/buy-crypto" },
-      ],
-    },
-    {
-      title: t("support"),
-      links: [
-        { name: t("helpCenter"), path: "/support" }, // New key, reusing existing path
-        { name: t("apiDocumentation"), path: "/apis" }, // New key, reusing existing path
-        { name: t("fees"), path: "/fees" }, // New key
-        { name: t("legal"), path: "/legal/terms" }, // New key, links to terms
-      ],
-    },
+  const quickLinks = [
+    'NFT Marketplace Development',
+    'Cryptocurrency Token Development',
+    'Decentralized Exchange',
+    'ICO Marketing'
   ];
 
-  const socialLinks = [
-    {
-      icon: <Facebook size={20} />,
-      path: "https://facebook.com/your-exchange",
-    },
-    { icon: <Twitter size={20} />, path: "https://twitter.com/your-exchange" },
-    {
-      icon: <Instagram size={20} />,
-      path: "https://instagram.com/your-exchange",
-    },
-    {
-      icon: <Linkedin size={20} />,
-      path: "https://linkedin.com/company/your-exchange",
-    },
-    { icon: <Youtube size={20} />, path: "https://youtube.com/your-exchange" },
+  const aboutLinks = [
+    'Services',
+    'About Us',
+    'Contact Us',
+    'Landing'
   ];
 
   return (
-    <footer className="bg-card text-dispute-color border-t border-custom-border py-8 md:py-12">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
-          {/* Brand Info */}
-          <div className="md:w-1/4">
-            <a
-              href="/"
-              className="flex items-center space-x-2 mb-4 text-xl font-extrabold text-accent hover:text-accent-dark btn-transition"
-            >
-              <img
-                src="/images/logo.png"
-                alt={t("appName")}
-                className="w-8 h-8 object-contain"
-              />
-              <span>{t("appName")}</span>
-            </a>
-            <div className="max-w-52">
-              <p className="text-sm text-dispute-color text-opacity-70">
-                {t("footerTagline")}
+    <footer className="bg-black text-white">
+      {/* Contact Now Button Section */}
+      <div className="bg-gradient-to-b from-black via-gray-900 to-black py-8">
+        <div className="flex justify-center">
+          <button className="group relative bg-white text-black font-bold text-xs tracking-[0.2em] px-20 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center gap-3">
+            CONTACT NOW
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+              <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-16">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+            {/* Company Info - Column 1 */}
+            <div className="space-y-6">
+              {/* Logo */}
+              <div className="flex items-center gap-3 mb-8">
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-xl">
+                    <span className="text-white font-bold text-2xl">C</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold tracking-wide">
+                    Cryptora<span className="text-xs align-super">™</span>
+                  </h3>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-gray-400 leading-relaxed text-sm pr-4">
+                We provide crypto and blockchain development company with experience in NFT marketplace development, token development, crypto wallet development.
               </p>
+
+              {/* Contact Info */}
+              <div className="space-y-4 pt-4">
+                <p className="text-gray-300 text-sm font-medium">
+                  Whatsapp & Call Number (Worldwide 24*7)
+                </p>
+                <div className="space-y-2 text-gray-400 text-sm">
+                  <p>+91 88174 36778</p>
+                  <p>+91 72239 27732</p>
+                  <p className="pt-2">digitalonebox.com@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Links - Column 2 */}
+            <div className="space-y-6">
+              <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
+              <ul className="space-y-4">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm block">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* About - Column 3 */}
+            <div className="space-y-6">
+              <h4 className="text-xl font-semibold mb-6">About</h4>
+              <ul className="space-y-4">
+                {aboutLinks.map((link, index) => (
+                  <li key={index}>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm block">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Privacy & Social - Column 4 */}
+            <div className="space-y-10">
+              {/* Privacy */}
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold">Privacy</h4>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm block">
+                  Terms and condition &<br />Privacy Policy
+                </a>
+              </div>
+
+              {/* Social */}
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold">Social</h4>
+                <div className="space-y-4">
+                  <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 group">
+                    <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center text-white text-xs group-hover:scale-110 transition-transform duration-300">
+                      W
+                    </div>
+                    <span className="text-sm">WhatsApp</span>
+                  </a>
+                  <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 group">
+                    <div className="w-6 h-6 bg-white rounded flex items-center justify-center text-black text-xs font-bold group-hover:scale-110 transition-transform duration-300">
+                      X
+                    </div>
+                    <span className="text-sm">Twitter-X</span>
+                  </a>
+                  <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 group">
+                    <div className="w-6 h-6 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded flex items-center justify-center text-white text-xs group-hover:scale-110 transition-transform duration-300">
+                      IG
+                    </div>
+                    <span className="text-sm">Instagram</span>
+                  </a>
+                  <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 group">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs group-hover:scale-110 transition-transform duration-300">
+                      T
+                    </div>
+                    <span className="text-sm">Telegram</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Navigation Links */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 md:w-3/4">
-            {footerLinks.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-md font-semibold mb-4 text-accent">
-                  {section.title}
-                </h3>
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.name}>
-                      <a
-                        href={link.path}
-                        className="text-sm  text-opacity-70 hover:text-accent btn-transition"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Separator */}
-        <hr className="border-custom-border my-8 md:my-10" />
-
-        {/* Bottom Section: Socials & Copyright */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
-          <div className="flex space-x-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.path}
-                href={social.path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dispute-color text-opacity-70 hover:text-accent btn-transition"
-                aria-label={
-                  social.path.includes("facebook")
-                    ? "Facebook"
-                    : social.path.includes("twitter")
-                    ? "Twitter"
-                    : social.path.includes("instagram")
-                    ? "Instagram"
-                    : social.path.includes("linkedin")
-                    ? "LinkedIn"
-                    : "YouTube"
-                }
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-          <p className="text-sm text-dispute-color text-opacity-70 text-center md:text-right">
-            &copy; {currentYear} {t("appName")}. {t("allRightsReserved")}{" "}
-            {/* New key */}
-          </p>
         </div>
       </div>
     </footer>

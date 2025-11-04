@@ -9,7 +9,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full px-6 overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -22,7 +22,10 @@ const HeroSection = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0" 
+        style={{
+          background: 'linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.505) 39%,rgba(0,0,0,.308) 77%,rgba(0,0,0,1) 100%)'
+        }}/>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
