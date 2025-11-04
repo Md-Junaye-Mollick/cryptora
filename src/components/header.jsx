@@ -17,9 +17,10 @@ const Header = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* Header */}
-      <header 
-        className={`w-full transition-all duration-300 ${
-          isScrolled ? 'bg-black/80 backdrop-blur-sm border-b border-white/10' : 'bg-black'
+      <header className={`w-full transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/30 backdrop-blur-sm border-b border-black ' 
+          : 'bg-transparent border-b border-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
