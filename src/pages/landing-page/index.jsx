@@ -1,9 +1,10 @@
 import React from "react";
+import HeroSection from "../../components/landing-sections/HeroSection";
 
 const LandingPage = () => {
   return (
     <>
-      <div>LandingPage</div>
+      <HeroSection/>
     </>
   );
 };

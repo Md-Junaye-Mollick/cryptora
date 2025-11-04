@@ -19,7 +19,7 @@ const Header = () => {
       {/* Header */}
       <header className={`w-full transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/30 backdrop-blur-sm border-b border-black ' 
+          ? 'bg-black/90 backdrop-blur-sm border-b border-white/20' 
           : 'bg-transparent border-b border-transparent'
         }`}
       >
@@ -95,7 +95,7 @@ const Header = () => {
               <a 
                 key={item}
                 href="#" 
-                className="block text-white hover:text-orange-500 text-base py-3 border-b border-white/10 transition-colors"
+                className="block text-white hover:text-orange-500 text-base py-3 px-3 rounded-xl border-b border-white/10 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}
