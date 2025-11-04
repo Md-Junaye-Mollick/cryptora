@@ -1,6 +1,17 @@
 import React from 'react';
 
 const About = () => {
+  const leftColumnServices = [
+    'NFT Marketplace',
+    'NFT Smart Contract',
+    'NFT Marketplace Support',
+  ];
+
+  const rightColumnServices = [
+    'NFT Development',
+    'Community Building',
+    'Social Media Marketing',
+  ];
   return (
     <div className="relative min-h-screen w-full bg-black overflow-hidden">
       {/* Background Pattern */}
@@ -21,7 +32,7 @@ const About = () => {
               <div className="" />
               
               {/* Image Placeholder - Replace with actual image */}
-              <div className=" overflow-hidden">
+              <div className="overflow-hidden">
                <img src="/images/AboutImages/AboutUsImg1.webp" alt="" />
               </div>
             </div>
@@ -29,7 +40,7 @@ const About = () => {
 
           {/* Right Side - Content */}
           <div className="text-white">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               ABOUT{' '}
               <span className="relative inline-block">
                 <span className="relative z-10">NFT</span>
@@ -39,35 +50,56 @@ const About = () => {
               MARKETPLACE
             </h2>
 
-            <p className="text-gray-300 text-lg mb-10 leading-relaxed">
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
               We build robust NFT marketplaces, integrating multiple security layers and rich features to enhance users' trading experiences. We offer a full range of NFT marketplace development services, from front-end to back-end to smart contract development, all under one umbrella.
             </p>
 
-            {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-x-12 gap-y-6 mb-10">
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
-                <span className="text-gray-200">NFT Marketplace</span>
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+              {/* Left Column */}
+              <div className="space-y-4">
+                {leftColumnServices.map((service, index) => (
+                  <div key={index} className="flex items-center gap-3 text-white text-base group">
+                    <svg 
+                      className="w-4 h-4 text-orange-500 flex-shrink-0 group-hover:scale-110 transition-transform" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M12 4v16m8-8H4" 
+                      />
+                      <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                    </svg>
+                    <span className="group-hover:text-orange-500 transition-colors">{service}</span>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
-                <span className="text-gray-200">NFT Development</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
-                <span className="text-gray-200">NFT Smart Contract</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
-                <span className="text-gray-200">Community Building</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
-                <span className="text-gray-200">NFT Marketplace Support</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
-                <span className="text-gray-200">Social Media Marketing</span>
+
+              {/* Right Column */}
+              <div className="space-y-4">
+                {rightColumnServices.map((service, index) => (
+                  <div key={index} className="flex items-center gap-3 text-white text-base group">
+                    <svg 
+                      className="w-4 h-4 text-orange-500 flex-shrink-0 group-hover:scale-110 transition-transform" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M12 4v16m8-8H4" 
+                      />
+                      <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                    </svg>
+                    <span className="group-hover:text-orange-500 transition-colors">{service}</span>
+                  </div>
+                ))}
               </div>
             </div>
 

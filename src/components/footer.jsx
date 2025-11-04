@@ -16,21 +16,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black text-white">
-      {/* Contact Now Button Section */}
-      <div className="bg-gradient-to-b from-black via-gray-900 to-black py-8">
-        <div className="flex justify-center">
-          <button className="group relative bg-white text-black font-bold text-xs tracking-[0.2em] px-20 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center gap-3">
-            CONTACT NOW
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
-              <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        </div>
+    <footer className="bg-black text-white relative">
+      {/* Contact Now Button - Overlapping */}
+      <div className="relative z-20 flex justify-center -mb-6">
+        <button className="group bg-white text-black font-bold text-xs tracking-[0.2em] px-20 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 shadow-2xl">
+          CONTACT NOW
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </div>
 
       {/* Main Footer Content */}
-      <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-16">
+      <div className="bg-gradient-to-b from-gray-800/50 via-gray-900/80 to-gray-900 pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
             {/* Company Info - Column 1 */}
@@ -60,9 +58,9 @@ const Footer = () => {
                   Whatsapp & Call Number (Worldwide 24*7)
                 </p>
                 <div className="space-y-2 text-gray-400 text-sm">
-                  <p>+91 88174 36778</p>
-                  <p>+91 72239 27732</p>
-                  <p className="pt-2">digitalonebox.com@gmail.com</p>
+                  <p>+91 12345 67890</p>
+                  <p>+91 12345 67890</p>
+                  <p className="pt-2">abc.com@gmail.com</p>
                 </div>
               </div>
             </div>
